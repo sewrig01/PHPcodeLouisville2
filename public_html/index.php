@@ -7,9 +7,17 @@ $sql = "SELECT * FROM RestList ";
 
 $test[] = $row;
 
+
+
 #echo '<li>'.$test.'</li> ';
 }
-# var_dump($test);
+#var_dump($test);
+foreach ($test as $result){
+	foreach ($result as $new){
+		echo $new.'<p></p>';
+	};
+};
+
 #var_dump($row);
 #randomize using index from 0 to values in test double array
 
@@ -27,4 +35,13 @@ $genrand = rand(0, count ($test)-1);
 #######################
 echo '<h1>'.$test[$genrand][1].'</h1>'."/n".$test[$genrand][2].$test[$genrand][3].$test[$genrand][4];
 
+
+# Add to database
+$a='monkey';
+$b='city';
+$c='fred';
+$d = 'doug';
+$sql = "INSERT INTO EatSpots ('EatName', 'EatAddress', 'EatGenre', 'EatPrice')
+VALUES ('$a','$b','$c','$d');";
+mysql_query($sql);
 ?>

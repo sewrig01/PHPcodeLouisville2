@@ -6,5 +6,5 @@
 #allow for selection of items
 #allow for exclusion of items
 #allow for saving of list as custom
-#take items that remain and randomize and pick.
+#take items that remain and randomize and pick !done!
 ?>

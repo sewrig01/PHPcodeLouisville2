@@ -2,7 +2,8 @@
 
 ini_set('display_errors','On');
 
-$dsn = 'mysql:dbname=Rest_db;host=localhost;';
+$dsn = 'mysql:dbname=Eats;host=localhost;';
+#$dsn = 'mysql:dbname=Rest_db;host=localhost;';
 $username = 'root';
 $password = 'eeyore';
 try {

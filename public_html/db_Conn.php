@@ -11,4 +11,5 @@ try {
 } catch(PDOException $e) {
     die('Could not connect to the database:<br/>' . $e);
 }
+var_dump ($db);
 ?>

@@ -2,6 +2,7 @@
 
 ini_set('display_errors','On');
 
+#$dsn = 'mysql:dbname=movie_db_1;host=localhost;';
 $dsn = 'mysql:dbname=Eats;host=localhost;';
 #$dsn = 'mysql:dbname=Rest_db;host=localhost;';
 $username = 'root';
@@ -11,5 +12,5 @@ try {
 } catch(PDOException $e) {
     die('Could not connect to the database:<br/>' . $e);
 }
-var_dump ($db);
+#var_dump ($db);
 ?>

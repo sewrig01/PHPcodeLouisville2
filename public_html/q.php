@@ -11,7 +11,7 @@ $dbhost = 'localhost:3036';
       die('Could not connect: ' . mysql_error());
    }
 
-   $sql = 'DELETE FROM EatSpots WHERE EatAddress != "2"';
+   $sql = 'DELETE FROM EatSpots WHERE EatName = "1"';
 
    mysql_select_db('Eats');
    $retval = mysql_query( $sql, $conn );
@@ -26,22 +26,20 @@ $dbhost = 'localhost:3036';
 
 };
 ##start function to add to database. Need to set to take var input from form.
-#function addtodb(){
-#added passed arguments
+function addtodb(){
 
-
-function addtodb($a,$b,$c,$d){
-    $dbhost = 'localhost:3036';
-    $dbuser = 'root';
-    $dbpass = 'eeyore';
-    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+$dbhost = 'localhost:3036';
+   $dbuser = 'root';
+   $dbpass = 'eeyore';
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 
    if(! $conn ) {
       die('Could not connect: ' . mysql_error());
    }
-  # $sql = 'INSERT INTO EatSpots (EatName,EatAddress, EatGenre, EatPrice) VALUES ( "TacoBell", "123 Old Mill", "Fast", "Cheap" )';
-## New sql to take passed data.
-   $sql = 'INSERT INTO EatSpots (EatName,EatAddress, EatGenre, EatPrice) VALUES ( '.$a.','.$b.','.$c.','.$d.')';
+
+   $sql = 'INSERT INTO EatSpots '.
+      '(EatName,EatAddress, EatGenre, EatPrice) '.
+      'VALUES ( "guest", "XYZ", "red", "NOW()" )';
 
    mysql_select_db('Eats');
    $retval = mysql_query( $sql, $conn );
@@ -55,4 +53,5 @@ function addtodb($a,$b,$c,$d){
    mysql_close($conn);
 
 };
+deltodb();
 ?>

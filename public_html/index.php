@@ -1,13 +1,16 @@
 
 <?php
-		include 'db_Conn.php';
+$pageTitle = "Resturant Picker";
+$Section = "Main";
+include ("header.php");
+include 'db_Conn.php';
 	#	include 'z.php';
-			include 'y.php';
-
-#			$a="1";
-#			$b="2";
-#			$c="3";
-#			$d="4";
+include 'y.php';
+include 'display.php';
+#			$a="'TacoBell'";
+#			$b="'1234 Old Mill Road'";
+#			$c="'Fast Food'";
+#			$d="'Cheap'";
 #			$a="5";
 #			$b="6";
 #			$c="7";
@@ -19,7 +22,8 @@
 
 #addtodb($a,$b,$c,$d);
 #deltodb();
-
+seltodb();
+#deseltodb();
 #was testing if proper $db
 #var_dump($db);
 
@@ -30,13 +34,41 @@
 $stmt = $db->query('SELECT * FROM EatSpots');
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #var_dump($results);
-echo $results[1]["EatName"];
+#echo $results[0]["EatName"];
 #			var_dump( $row);
+#display picked items
+foreach ($results as $id=>$item){
+	#if ($id == 'y'){
+	#	echo display_all($id,$item);}
+if ($item["EatPicked"]=="y"){
+	echo display_all($id,$item);
+};
+}
+echo "++++++++++++++++++++++++++++=";
+#sort out only selected
 
+foreach ($results as $id=>$item){
+if ($item["EatPicked"]=="y"){
+	$test[] = $item;
+	};
+}
+#var_dump($test);
+#echo '<h1>'.$test[rand(0, count ($test)-1)][1].'</h1>';
+#print randomized selection from picks 
+echo $test[rand(0, count ($test)-1)]["EatName"];
+$genrand = rand(0, count ($test)-1);
+#echo $genrand;
 
+echo "++++++++++++++++++++++++++++=";
 
-
-
+foreach ($results as $id=>$item){
+	echo display_all($id,$item);
+}
+?>
+<form method = "post" action = "form.php" >
+	<input type = "submit" value = "Add a resturant" />
+	</form>
+	<?php
 		#	foreach($row as $item){
 			#	echo $item;
 		#	}

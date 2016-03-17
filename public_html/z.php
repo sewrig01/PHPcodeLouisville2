@@ -1,31 +1,25 @@
 <?php
-##start function to add to database. Need to set to take var input from form.
-function addtodb(){
+include ("y.php");
+#echo 'processing';
+#var_dump($_POST);
+# echo $_POST[0];
+ $id= $_POST["MyOption"];
+# $addGenre= $_POST["genre"];
+#$addPrice= $_POST["price"];
+#echo for testing puposes
+#echo $addName;
+#echo $id;
+#echo $addGenre;
+#echo $addPrice;
 
-$dbhost = 'localhost:3036';
-   $dbuser = 'root';
-   $dbpass = 'eeyore';
-   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
-
-   if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
-   }
-
-   $sql = 'INSERT INTO EatSpots '.
-      '(EatName,EatAddress, EatGenre, EatPrice) '.
-      'VALUES ( "guest", "XYZ", "red", "NOW()" )';
-
-   mysql_select_db('Eats');
-   $retval = mysql_query( $sql, $conn );
-
-   if(! $retval ) {
-      die('Could not enter data: ' . mysql_error());
-   }
-
-   echo "Entered data successfully\n";
-
-   mysql_close($conn);
-
-};
-
+#$option = isset($_POST['MyOption']) ? $_POST['MyOption'] : false;
+#   if ($option) {
+#      echo htmlentities($_POST['MyOption'], ENT_QUOTES, "UTF-8");
+#   } else {
+#     echo "task option is required";
+#     exit;
+#   }
+seltodb("$id");
+$url = 'index.php';
+echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 ?>

@@ -56,8 +56,8 @@ function addtodb($a,$b,$c,$d){
 
 };
 
-##start function to select to database. Need to set to take var input from form.
-function deseltodb(){
+##start function to deselect to database. Need to set to take var input from form.
+function deseltodb($id){
 
 $dbhost = 'localhost:3036';
    $dbuser = 'root';
@@ -71,18 +71,22 @@ $dbhost = 'localhost:3036';
    $sql = '
    UPDATE EatSpots
 SET EatPicked = "n"
-Where EatPrice = "cheap";';
+ Where id = '.$id.';';
 
    mysql_select_db('Eats');
    $retval = mysql_query( $sql, $conn );
 
    if(! $retval ) {
-      die('Could not enter data: ' . mysql_error());
+    #  die('Could not enter data_: ' . mysql_error());
+      $url = 'index.php';
+     echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
    }
 
-   echo "Deselected data successfully\n";
+#   echo "Deselected data successfully\n";
    };
-   function seltodb(){
+
+   #function to select passed id to db
+   function seltodb($id){
 
    $dbhost = 'localhost:3036';
       $dbuser = 'root';
@@ -96,13 +100,16 @@ Where EatPrice = "cheap";';
       $sql = '
       UPDATE EatSpots
    SET EatPicked = "y"
-   Where EatPrice = "cheap";';
+   Where id = '.$id.';';
 
       mysql_select_db('Eats');
       $retval = mysql_query( $sql, $conn );
 
       if(! $retval ) {
-         die('Could not enter data: ' . mysql_error());
+      #   die('Could not enter data: ' . mysql_error());
+      $url = 'index.php';
+     echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+    
       }
 
       echo "Selected data successfully\n";

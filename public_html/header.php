@@ -4,7 +4,7 @@
 
 			<link rel="stylesheet" href="css/normalize.css">
 			<link rel="stylesheet" href="css/bootstrap.min.css">
-			<!--<link rel="stylesheet" href="css/cvwcol.css"> -->
+			<link rel="stylesheet" href="css/cvwcol.css">
 			<title><?php echo $pageTitle; ?></title>
 <!--Temp reuse of header as placeholder -->
 	</head>
@@ -14,7 +14,7 @@
 			<div class="container row">
 				<header>
 					<h1>
-						What to Eat....
+						<?php echo $PgHeading ?>
 					</h1> <p>
 						<br />
 					</p>

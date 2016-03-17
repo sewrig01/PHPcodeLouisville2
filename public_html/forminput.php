@@ -13,5 +13,6 @@ $addPrice= $_POST["price"];
 
 addtodb("'$addName'","'$addAddress'","'$addGenre'","'$addPrice'");
 
-
+$url = 'index.php';
+echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 ?>

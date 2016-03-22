@@ -1,11 +1,7 @@
 <?php
-function display_all($id, $item){
-
-  echo "<li>".$item["EatName"].
-  "  ".$item["EatAddress"]."  ".
-  $item["EatGenre"]."  ".$item["EatPrice"]."</li>";
-}
-
-
-
- ?>
+  function display_all($id, $item){
+    echo "<li><b>".$item["EatName"].
+    "</b>  ".$item["EatAddress"]."  <b>".
+    $item["EatGenre"]."</b>  ".$item["EatPrice"]."</li>";
+  }
+?>

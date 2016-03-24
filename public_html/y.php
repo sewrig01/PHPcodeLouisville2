@@ -80,6 +80,10 @@
   #   die('Could not enter data: ' . mysql_error());
     $url = 'index.php';
     echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
-   }
-  };
+}
+
+    #  echo "Selected data successfully\n";
+      };
+
+
 ?>

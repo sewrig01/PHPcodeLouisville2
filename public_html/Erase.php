@@ -7,8 +7,8 @@ $dbhost = 'localhost:3036';
    if(! $conn ) {
       die('Could not connect: ' . mysql_error());
    }
-#sql for delete
- $sql = 'DELETE FROM EatSpots where EatGenre= "TexMex"';
+#sql for delete4
+ $sql = 'DELETE FROM EatSpots where EatPrice= "4"';
 #Sql for add all
 #	$sql = 'UPDATE EatSpots
 #	SET EatPicked = "y"';
